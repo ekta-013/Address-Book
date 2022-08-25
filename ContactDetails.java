@@ -1,7 +1,7 @@
 package com.bridgelaps;
 
 public class ContactDetails {
-	private String firstName;
+	String firstName;
 	private String lastName;
 	private String address;
 	private String city;
