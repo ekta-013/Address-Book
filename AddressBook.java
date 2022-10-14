@@ -49,5 +49,15 @@ public class AddressBook {
 	            editDetails();
 	        }
 	    }
+	    public void deleteDetails() {
+	    	System.out.println("Enter first Name of a person to delete: ");
+	    	String checkName = sc.nextLine();
+	    	if (checkName.equals(person.firstName)) {
+	    		person = null;
+	    		System.out.println("Details deleted successfully");
+	    	} else {
+	    		System.out.println("Please enter valid first naame:");
+	    	}
+	    }
 	}
 		
