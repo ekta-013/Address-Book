@@ -1,10 +1,12 @@
 package com.bridgelaps;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AddressBook {
+	
 		ContactDetails person = new ContactDetails();
-
+		ArrayList<ContactDetails> list = new ArrayList<>();
 	    Scanner sc = new Scanner(System.in);
 
 	    public void addDetails() {
@@ -33,31 +35,87 @@ public class AddressBook {
 	        System.out.println("Enter Email Id : ");
 	        person.setEmail(sc.nextLine());
 
+	        list.add(person);
 	        System.out.println(person);
+	        System.out.println("Contact Added Successfully");
 
 	    }
 
 	    public void editDetails() {
-
-	        System.out.println("Enter First Name Of A Person To Edit :  ");
-	        String checkName = sc.nextLine();
-
-	        if (checkName.equals(person.firstName)) {
-	            addDetails();
-	        } else {
-	            System.out.println("Please Enter Valid First Name!");
-	            editDetails();
-	        }
-	    }
-	    public void deleteDetails() {
-	    	System.out.println("Enter first Name of a person to delete: ");
-	    	String checkName = sc.nextLine();
-	    	if (checkName.equals(person.firstName)) {
-	    		person = null;
-	    		System.out.println("Details deleted successfully");
+	    	int count = 0;
+	    	if (list.isEmpty()) {
+	    		System.out.println("There is no contact available");
 	    	} else {
-	    		System.out.println("Please enter valid first naame:");
+	    		System.out.println("Enter first name of a person to edit:");
+	    		String editName = sc.nextLine();
+	    		for (ContactDetails contact : list){
+	    			if ((contact.getFirstName().equals(editName))) {
+	    				
+	    				System.out.println("Enter new first name: ");
+	    				contact.setFirstName(sc.nextLine());
+	    				
+	    				System.out.println("Enter new last name: ");
+	    				contact.setLastName(sc.nextLine());
+	    				
+	    				System.out.println("Enter new address: ");
+	    				contact.setAddress(sc.nextLine());
+	    				
+	    				System.out.println("Enter new city name: ");
+	    				contact.setCity(sc.nextLine());
+	    				
+	    				System.out.println("Enter new state name: ");
+	    				contact.setState(sc.nextLine());
+	    				
+	    				System.out.println("Enter new zip code: ");
+	    				contact.setZip(sc.nextLine());
+	    				
+	    				System.out.println("Enter New Phone Number : ");
+	                    contact.setPhoneNumber(sc.nextLine());
+
+	                    System.out.println("Enter New Email Id : ");
+	                    contact.setEmail(sc.nextLine());
+	    				
+	                    System.out.println(contact);
+	                    System.out.println("Contact edited successfully");
+	                    count++;
+	                    break;
+	    			}
+	    		}
+	    		if (count == 0) {
+	    			System.out.println("Please enter valid First name: ");
+	    			
+	    		}
 	    	}
 	    }
-	}
-		
+	    
+	    public void deleteDetails() {
+	    	int count = 0;
+	    	if (list.isEmpty()) {
+	    		System.out.println("There is  no contact availabe");
+	    	} else {
+	    		System.out.println("Enter first name of the person to delete: ");
+	    		String deleteName = sc.nextLine();
+	            for (ContactDetails contact : list) {
+	                if (contact.getFirstName().equals(deleteName)) {
+	                    list.remove(contact);
+	                    System.out.println("Contact Deleted Successfully");
+	                    count++;
+	                    break;
+	    	}
+	    }	
+		if (count == 0) {
+			System.out.println("Please enter valis first name!");
+		}
+	}	
+}
+	    public void showDetails() {
+	    	System.out.println("Number of contacts stored:" + list.size());
+	    	if (list.isEmpty()) {
+	    		System.out.println("There is no contacts available");
+	    	} else {
+	    		for (ContactDetails contactDetails : list) {
+	    			System.out.println(contactDetails);
+	   		}
+	   	}
+    }
+}

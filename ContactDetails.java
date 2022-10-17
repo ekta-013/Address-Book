@@ -2,43 +2,76 @@ package com.bridgelaps;
 
 public class ContactDetails {
 	String firstName;
-	private String lastName;
-	private String address;
-	private String city;
-	private String state;
-	private String zip;
-	private String phoneNumber;
-    private String email;
+	 String lastName;
+	 String address;
+	 String city;
+	 String state;
+	 String zip;
+	 String phoneNumber;
+     String email;
+     
+     
+    public String getFirstName() {
+		return firstName;
+	}
 
-    public void setFirstName(String firstName) {
+	public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+	
+	public String getLastName() {
+		return lastName;
+	}
+	
+	 public void setLastName(String lastName) {
+	        this.lastName = lastName;
+   }
+	 
+	public String getAddress() {
+		return address;
+	}
+	
+	 public void setAddress(String address) {
+	        this.address = address;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public void setCity(String city) {
+	public String getCity() {
+		return city;
+	}
+	
+	public void setCity(String city) {
         this.city = city;
     }
 
-    public void setState(String state) {
-        this.state = state;
-    }
+	public String getState() {
+		return state;
+	}
+	
+	 public void setState(String state) {
+	        this.state = state;
+	    }
 
-    public void setZip(String zip) {
+	public String getZip() {
+		return zip;
+	}
+	
+	public void setZip(String zip) {
         this.zip = zip;
     }
 
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+	 
     public void setPhoneNumber(String PhoneNumber) {
         this.phoneNumber = PhoneNumber;
     }
 
-    public void setEmail(String email) {
+    public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
         this.email = email;
     }
 
@@ -55,4 +88,5 @@ public class ContactDetails {
                 ", email='" + email + '\'' +
                 '}';
     }
+
 }
